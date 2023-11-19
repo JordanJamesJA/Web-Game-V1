@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-primary: #3aafa9;
+  --secondary: #def2f1;
+  --text-primary: #feffff;
+  --text-secondary: #17252a;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: Nunito;
+  background-color: var(--background-primary);
+  animation: fadeIn 1.5s;
+}
+
+/* Header */
+
+nav {
+  background-color: var(--text-secondary);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--text-secondary);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.navbar a {
+  color: var(--background-primary);
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--text-primary);
+}
+
+#title {
+  /* font-weight: bold; */
+  font-size: 20px;
+}
+
+/* Adjust the aside and container position */
+aside.sidebar,
+div.container {
+  margin-top: 10vh;
+}
+
+/* End Header */
+
+textarea {
+  width: 50%;
+  margin: 50%;
+}
