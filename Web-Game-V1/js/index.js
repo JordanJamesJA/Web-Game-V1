@@ -71,6 +71,9 @@ function Register() {
         DateOfBirth: dob,
         Age: age,
         Gender: gender,
+        date: new Date().toLocaleDateString(),
+        correctAnswers: 0,
+        incorrectAnswers: 0,
     };
 
     PlayerRegistrationData.push(playerData);
@@ -78,6 +81,8 @@ function Register() {
     localStorage.setItem("PlayerRegistrationData", JSON.stringify(PlayerRegistrationData));
 
     alert("Registration successful!");
+
+    document.getElementById("playAreaContainer").style.display = "block";
 
     document.getElementById("startEndButtons").style.display = "block";
     document.getElementById("registrationContainer").style.display = "none";
@@ -146,7 +151,11 @@ function PlayGame(event) {
 }
 
 const start = document.getElementById("startButton");
-start.addEventListener("click", PlayGame);
+start.addEventListener("click", function(event) {
+    PlayGame(event);
+    start.disabled = true;
+});
+
 
 const next = document.getElementById("next");
 next.addEventListener("click", PlayGame);
@@ -167,22 +176,20 @@ function checkAns(event) {
 
     //check to see if the answer is correct
     if (userans == correctans) {
+        // increment the correctAnswers property for the current player
+        PlayerRegistrationData[PlayerRegistrationData.length - 1].correctAnswers++;
+        localStorage.setItem("PlayerRegistrationData", JSON.stringify(PlayerRegistrationData));
+
         return document.getElementById("result").value = "Correct!";
-        //push the response to PlayerRegistrationData
     }
     else {
+        // increment the correctAnswers property for the current player
+        PlayerRegistrationData[PlayerRegistrationData.length - 1].incorrectAnswers++;
+        localStorage.setItem("PlayerRegistrationData", JSON.stringify(PlayerRegistrationData));
+        
         return document.getElementById("result").value = "Incorrect!";
-        //push the response to PlayerRegistrationData
     }
 
 }
 const check = document.getElementById("check");
 check.addEventListener("click", checkAns);
-
-
-// rename to findPercentageScore()
-function endFunction() {
-    alert("End button clicked! :)");
-}
-const end = document.getElementById("endButton");
-end.addEventListener("click", endFunction);

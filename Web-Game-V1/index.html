@@ -18,7 +18,7 @@
         <nav>
             <div id="navbar" class="navbar">
                 <a href="index.html" id="title">Math Multiplication Game</a>
-                <a href="./playerStats.html">Player Stats</a>
+                <a href="playerStats.html">Player Stats</a>
             </div>
         </nav>
     </header>
@@ -96,9 +96,30 @@
             </div>
             </form>
         </div>
+
+        <div class="form-container" id="resultsContainer" style="display: none;">
+            <!-- Stats Display -->
+            <h1>Percentage Score</h1>
+            <table id="showpercentage">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Date</th>
+                        <th>Total Questions</th>
+                        <th>Correct Answers</th>
+                        <th>Percentage Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Insert table rows dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
     </div>
+
 </body>
 
 <script src="./js/index.js"></script>
+<script src="./js/playerStats.js"></script>
 
 </html>
