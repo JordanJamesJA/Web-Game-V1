@@ -1,0 +1,126 @@
+<!-- Task 1: Create new HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Author" content="Jordan James" />
+    <meta name="description" content="Math Game designed for children between ages 8 to 12" />
+    <meta name="keywords" content="Math, Mathematics, Game, Kids, Children, Multiplication" />
+    <title>Math Game</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+<body>
+    <!-- Navigation Bar -->
+
+    <header>
+        <nav>
+            <div id="navbar" class="navbar">
+                <a href="index.html" id="title">Math Multiplication Game</a>
+               <!--scrapped the 2 webpage idea-->
+               <!-- <a href="">Player Stats</a> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- End Navigation Bar -->
+
+    <aside class="sidebar">
+        <!-- Registration Form -->
+        <form id="registrationForm">
+            <div id="registrationContainer">
+                <div class="form-item">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname" id="fname" required />
+                </div>
+
+                <div class="form-item">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" id="lname" required />
+                </div>
+
+                <div class="form-item">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" name="dob" id="dob" oninput="calculateAge()" required />
+                </div>
+
+                <div class="form-item">
+                    <label for="age">Age:</label>
+                    <input type="text" name="age" id="age" disabled />
+                </div>
+
+                <div class="form-item">
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender" required>
+                        <option value="" disabled selected>
+                            Select Gender
+                        </option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <!-- Task 3 -->
+                <div style="text-align: center;">
+                    <button type="submit" id="registerButton" style="text-align: center;">Register</button>
+                </div>
+            </div>
+            <div id="welcomeMessage" style="display: none; text-align: center"></div>
+            <div id="startEndButtons" style="display: none; text-align: center">
+                <button id="startButton" disabled>
+                    Start
+                </button>
+                <button id="endButton" disabled>End</button>
+            </div>
+        </form>
+        <!-- End Registration Form -->
+    </aside>
+
+    <!--Task 4-->
+    <div class="container">
+        <div class="form-container" id="playAreaContainer">
+            <form id="playArea">
+                <div class="form-item" id="resultContainer">
+                    <input type="text" id="result" disabled />
+                </div>
+                <div class="form-item">
+                    <input type="text" id="randnum1" disabled /><label> x </label>
+                    <input type="text" id="randnum2" disabled />
+                    <label> = </label>
+                    <input type="number" id="ans" disabled />
+                </div>
+                <div id="buttons" style="text-align: center;">
+                <button id="accept" disabled>Accept</button>
+                <button id="next" disabled>Next</button>
+                <button id="check" disabled>Check Answer</button>
+            </div>
+            </form>
+        </div>
+
+        <div class="form-container" id="resultsContainer" style="display: none;">
+            <!-- Stats Display -->
+            <h1>Percentage Score</h1>
+            <table id="showpercentage">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Date</th>
+                        <th>Total Questions</th>
+                        <th>Correct Answers</th>
+                        <th>Percentage Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Insert table rows dynamically using JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/playerStats.js"></script>
+</body>
+
+
+</html>
